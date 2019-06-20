@@ -1,0 +1,19 @@
+<button [routerLink]="['/']">Home</button>
+
+<div *ngFor="let err of errors">
+    <p style="color: red;"> ***{{ err.name.message }}***</p>
+</div>
+
+<h4>Add a new author:</h4>
+
+<p>{{ author | json }}</p>
+
+<form (submit)="createAuthor()">
+  <p>Name:</p>
+  <p><input type="text" name="author.name" [(ngModel)]="author.name"></p>
+  <button [routerLink]="['/']">Cancel</button>
+  <input type="submit" value="Submit">
+</form>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+<button [routerLink]="['/']">Home</button>
+<div *ngIf="errors">
+  <p style="color: red"> ***{{ errors.message }}***</p>
+
+
+</div>
+
+<form (submit)="editAuthor()">
+  <input type="text" name="edit.name" [(ngModel)]="edit.name">
+  <button [routerLink]="['/']">Cancel</button>
+  <input type="submit" value="Edit">
+</form>
+<router-outlet></router-outlet>
